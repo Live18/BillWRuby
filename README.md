@@ -1,7 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I'm BillW. This repo is for my Ruby on Rails project thru CareerFoundry. Plenty to learn, and I'm excited to do so.
+
+I will add more detail to this README as I pick up other details from the coursework.
 
 Things you may want to cover:
 
