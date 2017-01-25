@@ -2,17 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-* {
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	border-radius: 0;
+h1 {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+	font-weight: 700px;
 }
 
 body {
+	margin-left: 20px;
+	margin-right: 20px;
 	padding-top: 40px;
 }
 
 .navbar {
- 	display: inline-block;
+ 	
  	background-color: black;
  	position: fixed;
  	width: 100%;
@@ -21,5 +27,29 @@ body {
  }
 
  .navbar ul li {
- 	text-color: white;
+ 	color: white;
+ 	display: inline-block;
+ 	text-align: right;
+ 	float: right;
+ 	padding-right: 25px;
+ 	font-size: large;
+ }
+
+ .navbar :hover {
+ 	color: yellow;
+ 	text-decoration: none;
+ }
+
+ .img-responsive {
+ 	display: block;
+ 	padding-top: 50px;
+ 	margin: auto;
+ }
+
+ p {
+ 	font-weight: bold;
+ }
+
+ .footer {
+ 	float: right;
  }
