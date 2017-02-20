@@ -1,6 +1,7 @@
 <div class="col-sm-2 col-md-3">
-            <%= image_tag(product.image_url, class: "img-responsive") %>
-            <h2><%= product.name %></h2>
-            <p><%= product.description %></p>
-            <strong>$ <%=product.price %>/month</strong>
-          </div>
+	<%= image_tag(product.image_url, class: "img-responsive") %>
+	<h2><%= product.name %></h2>
+	<p><%= product.description %></p>
+	<strong>$ <%=product.price %>/month</strong>
+	<%= link_to "Delete", product_path(product), :method => "DELETE", :confirm => "Are you sure you want to delete?" %>
+</div>
