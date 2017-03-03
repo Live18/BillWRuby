@@ -34,10 +34,11 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'pg'
 
 group :production do
   #Adding Gen for 3.10 exersize
-  gem 'pg'
+
 end
 
 group :development, :test do
