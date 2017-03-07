@@ -6,10 +6,14 @@
   <div class="conatainer-fluid">
     
 
-      <% @products.each do |product| %>
-      	<%= @test_variable %>
+     
         <div class="row">
-          <%= render 'product', product: product %>
+       	 <% @products.each do |product| %>
+         	<div class="col-sm-2 col-md-4">
+         		<h1><%= link_to product.name, product %></h1>
+         		<p><%= product.description %></p>
+         		<strong>$ <%= product.price %></strong>
+     		</div>
         </div>
       <% end %>
 
