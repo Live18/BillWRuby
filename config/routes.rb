@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :products
+  get '/products/:id', to: 'products#show'
   get 'static_pages/about'
 
   get 'static_pages/contact'
