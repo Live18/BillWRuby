@@ -4,8 +4,22 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    binding.pry
+    @price_limit = params[:price_limit].to_i
+    @products = Product.where(:price => 0..@price_limit)
+    render :json => @products
+
     @products = Product.all
-    @test_variable = 102
+    search_term = params[:q]
+
+    if params[:q]
+      search_term = params[:q]
+      @products = Product.search(search_term)
+      # Filtered list shows here
+    else
+      @products = Product.all
+    end
+    
   end
 
   # GET /products/1

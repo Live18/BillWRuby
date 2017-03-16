@@ -1,7 +1,12 @@
 <h1>Editing Product</h1>
 
+<div class="container-fluid">
+	<div class="col-sm-2 col md-4">
+
 <%= render 'form', product: @product %>
 
 <%= link_to 'Show', @product %> |
 <%= link_to 'Back', products_path %>
 <%= link_to 'Check The Featured Products', static_pages_landing_page_path %> 
+	</div>
+</div>
