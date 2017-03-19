@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   def index
     @price_limit = params[:price_limit].to_i
     @products = Product.where(:price => 0..@price_limit)
-    render :json => @products
+   
 
     @products = Product.all
     search_term = params[:q]
