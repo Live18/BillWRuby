@@ -1,9 +1,11 @@
 <h1>Learn More About ARC Sports Tech</h1>
 <h2>Fill out the form below and be part of the beta test</h2>
-<%= form_tag do %>
-	<div class="upperBody leftSpace">
+
+<h1>Contact Us</h1>
+<%= flash[:notice] %>
+<%= form_tag('/static_pages/thank_you') do %>
     <div class="row">
-      <h1>Contact Us</h1>
+      
       <div class="col-md-4">
         <div class="form-group">
           <%= label_tag :name %>
