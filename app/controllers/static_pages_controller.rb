@@ -10,9 +10,6 @@ class StaticPagesController < ApplicationController
   	@name = params[:name]
   	@email = params[:email]
   	@message = params[:message]
-  	ActionMailer::Base.mail(:from => @email, 
-  		:to => 'billwagner102@gmail.com',
-  		:subject => 'New ARC Contact Email from #{@name}',
-  		:body => @message).deliver_now
+  	UserMail.contact_form(@email, @name, @message).deliver_now
   end 
 end
