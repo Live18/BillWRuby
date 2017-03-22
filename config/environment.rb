@@ -4,7 +4,7 @@ require_relative 'application'
 # Initialize the Rails application.
 Rails.application.initialize!
 
-ActionMauler::Base.smtp_setting = {
+ActionMauler::Base.smtp_settings = {
 	:address => 'smtp.sendgrid.net',
 	:port => '587',
 	:authentication => :plain,
