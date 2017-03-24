@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'pg'
 gem 'pry-rails'
-
+gem 'cancancan', '~> 1.10'
 group :production do
   #Adding Gen for 3.10 exersize
 
