@@ -34,6 +34,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-4 col-md-6">
+      <p class="product-image">
+        <%= image_tag(@product.image_url, class: "img-responsive") %>
+      </p>
+    </div>
+    <div class="col-sm-4 col-md-6">
       <p class="product-name">
         <%= @product.name %>
       </p>
@@ -45,11 +50,11 @@
         <%= @product.price %>
       </p>
     </div>
-    <div class="col-xs-6">
-      <p class="product-image">
-        <%= image_tag(@product.image_url, class: "img-responsive") %>
-      </p>
+
+    <div>
+     <%= render 'comments/new_comment', comments: @product.comments %>
     </div>
+    
     <h4>Highest Rating Comment</h4>
         <% if @product.highest_rating_comment %>
         <%= @product.highest_rating_comment.body %>
