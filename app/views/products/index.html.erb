@@ -8,22 +8,18 @@
 
      
         <div class="row">
-       	 <% @products.each do |product| %>
+       
          	<div class="col-sm-2 col-md-4">
          		<h1><%= link_to product.name, product %></h1>
          		<p><%= product.description %></p>
-         		<strong>$ <%= product.price %></strong>
-     		  </div>
+         		<strong><%= product.price %></strong>
+          </div>
         </div>
+        <%= render @products %>
         <% end %>
-     
 
-    
+       
+        
   </div>
 
-  
-
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>
+  <br>
