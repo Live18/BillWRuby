@@ -34,15 +34,17 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-2 col-md-4">
-      <p class="product-image">
-        <%= image_tag(@product.image_url, class: "img-responsive") %>
-      </p>
+      <div class="product-image">
+        <% if @product.image_url %>
+              <%= image_tag(@product.image_url, class: "img-responsive") %>
+          <% end %>
+      </div>
     </div>
     <div class="col-sm-2 col-md-4">
       <p class="product-name">
         <%= @product.name %>
       </p>
-      
+
       <p class="product-description">
         <%= @product.description %>
       </p>
