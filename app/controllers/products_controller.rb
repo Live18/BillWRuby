@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @comments = @product.comments.order("created_at DESC")
+      @comments = @product.comments.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /products/new
@@ -46,7 +47,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to :back, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
-        format.html { render :new }
+        format.html { redirect_to @product, alert: 'Product not saved successfully.'}
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
@@ -60,7 +61,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
-        format.html { render :edit }
+        format.html { render notice: 'Product was not successfully updated.' }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
