@@ -73,6 +73,7 @@
 </div>
 <div class="col-sm-2 col-md-4">
   <%= render 'new_comment', comments: @product.comments %>
+  <%= render partial: "comments" %>
   <%= will_paginate @comments %>
 </div>
 
