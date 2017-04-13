@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user!, except: [:index, :show] # This line only allows admin to change product listings. Otherwise, anyone on the site can do it.
   # GET /products
   # GET /products.json
   def index
@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: 5)
+    @comments = @product.comments.order("created_at DESC").paginate(page: params[:page], per_page: 5) #The paginate code defining the number of comment per page.
   end
 
   # GET /products/new

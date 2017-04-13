@@ -31,16 +31,16 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="container-fluid">
+<div class="container col-sm-2 col-md-4">
   <div class="row">
-    <div class="col-sm-2 col-md-4">
+    
       <div class="product-image">
         <% if @product.image_url %>
               <%= image_tag(@product.image_url, class: "img-responsive") %>
           <% end %>
       </div>
     </div>
-    <div class="col-sm-2 col-md-4">
+    
       <p class="product-name">
         <%= @product.name %>
       </p>
@@ -53,7 +53,7 @@
       </p>
     </div>
 
-    <div class="col-sm-2 col-md-4">
+   
 
     </div>
     <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div></p>

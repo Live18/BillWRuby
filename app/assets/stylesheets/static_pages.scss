@@ -20,7 +20,7 @@ body {
 .navbar {
  	
  	background-color: navy;
- 	position: fixed;
+ 	position: inline-block;
  	width: 100%;
  	z-index: 1;
 
@@ -29,21 +29,23 @@ body {
  .navbar ul li {
  	color: white;
  	display: inline-block;
- 	text-align: right;
+ 	text-align: left;
  	float: right;
  	padding-right: 25px;
  	font-size: large;
  }
 
  .navbar :hover {
- 	color: yellow;
+ 	color: red;
  	text-decoration: none;
  }
 
  .img-responsive {
- 	display: block;
+ 	display: inline-block;
  	padding-top: 50px;
- 	margin: auto;
+ 	margin: 0;
+ 	max-width: 240px;
+ 	max-height: 240px;
  }
 
  p {
