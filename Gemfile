@@ -48,6 +48,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   #Adding sqlite3 for 3.10
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
