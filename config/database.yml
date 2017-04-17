@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 #
 development:
-  adapter: postgresql
+  adapter: sqlite3
   host: localhost
   encoding: unicode
   database: arcsports_development
