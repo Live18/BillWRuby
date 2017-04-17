@@ -15,12 +15,11 @@ body {
 	margin-left: 20px;
 	margin-right: 20px;
 	padding-top: 40px;
-	background-color: pink;
 }
 
 .navbar {
  	
- 	background-color: red;
+ 	background-color: white;
  	position: inline-block;
  	width: 100%;
  	z-index: 1;
@@ -28,9 +27,9 @@ body {
  }
 
  .navbar ul li {
- 	color: white;
+ 	color: black;
  	display: inline-block;
- 	text-align: center;
+ 	text-align: left;
  	float: right;
  	padding-right: 25px;
  	font-size: large;
