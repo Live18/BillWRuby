@@ -56,6 +56,8 @@ body {
  	float: right;
  }
 
- #my-image {
+ .carousel-inner {
  	float: center;
+ 	max-width: 300;
+ 	max-height: 300;
  }
