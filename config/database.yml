@@ -8,7 +8,7 @@ development:
   adapter: sqlite3
   host: localhost
   encoding: unicode
-  database: arcsports_development
+  database: db/development.sqlite3
   pool: 5
   template: template0
 
