@@ -9,6 +9,7 @@
 
 	<!-- Wrapper -->
 	<div class="carousel-inner" role="listbox">
+		<%= stylesheet_link_tag    "application", :media => "all" %>
 		<% @products.each do |product| %>
 		<div class="item<%= " active" if product == @products.first %>">
 			<%= image_tag(product.image_url, {:style => 'margin :auto ;display :block'}) %>
