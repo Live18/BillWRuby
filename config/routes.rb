@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
   resources :users 
-    root 'static_pages#index'
+    root 'static_pages#landing_page'
   
 
 
