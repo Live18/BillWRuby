@@ -31,10 +31,10 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="container col-sm-2 col-md-4 col-lg-6">
+<div class="container">
   <div class="row">
     
-      <div class="product-image">
+      <div class="product-image col-sm-2 col-md-4 col-lg-6">
         <% if @product.image_url %>
               <%= image_tag(@product.image_url, class: "img-responsive") %>
           <% end %>
