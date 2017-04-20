@@ -34,12 +34,12 @@
 <div class="container">
   <div class="row">
     
-      <div class="product-image col-sm-2 col-md-4 col-lg-6">
+      <!-- <div class="product-image col-sm-2 col-md-4 col-lg-6"> -->
         <% if @product.image_url %>
               <%= image_tag(@product.image_url, class: "img-responsive") %>
           <% end %>
-      </div>
-    </div>
+      <!-- </div>
+    </div> -->
     
       <p class="product-name">
         <%= @product.name %>
@@ -51,11 +51,11 @@
       <p class="product-price">
         <%= @product.price %>
       </p>
-    </div>
+    <!-- </div>
 
    
 
-    </div>
+    </div> -->
     <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div></p>
 
 <div class="col-sm-2 col-md-4">
@@ -68,14 +68,19 @@
       <% if @product.lowest_rating_comment %>
         <%= @product.lowest_rating_comment.body %>
       <% end %>
-    </div>
-  </div>
-</div>
-<div class="col-sm-2 col-md-4">
+    
+  
+<!-- </div>
+<div class="col-sm-2 col-md-4"> -->
   <%= render 'new_comment', comments: @product.comments %>
   <%= render partial: "comments" %>
   <%= will_paginate @comments %>
-</div>
 
-<%= link_to 'Edit', edit_product_path(@product), class:'btn btn-primary' %> |
-<%= link_to 'Back', products_path, class:'btn btn-primary' %>
+  <p></p>
+  <p></p>
+
+
+    <%= link_to 'Edit', edit_product_path(@product), class:'btn btn-primary' %> |
+    <%= link_to 'Back', products_path, class:'btn btn-primary' %>
+  </div>  
+</div>
