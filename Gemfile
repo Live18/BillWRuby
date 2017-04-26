@@ -4,6 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
+
 gem 'rails-controller-testing'
 gem 'bootstrap-sass', '~>3.2.0'
 gem 'autoprefixer-rails'
@@ -48,6 +49,7 @@ group :development, :test do
   #Adding sqlite3 for 3.10
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails', '~>4.0'
 end
 
 group :development do
