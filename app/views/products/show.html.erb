@@ -51,15 +51,21 @@
       <p class="product-price">
         <%= @product.price %>
       </p>
-    <!-- </div>
+    <!-- </div> -->
 
    
+    <%= form_tag "/payments/create" do %>
+      <%= hidden_field_tag(:product_id, @product.id) %>
+      <%= render partial: 'shared/stripe_checkout_button' %>
+    <% end %>
 
-    </div> -->
+   <!--  </div> -->
 </div>
-    <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div></p>
 
-<div class="col-sm-2 col-md-4">
+<p></p>
+    
+
+<div class="col-sm-12 col-md-4">
   <h4>Highest Rating Comment</h4>
     <% if @product.highest_rating_comment %>
       <%= @product.highest_rating_comment.body %>
@@ -69,6 +75,7 @@
       <% if @product.lowest_rating_comment %>
         <%= @product.lowest_rating_comment.body %>
       <% end %>
+      <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div></p>
     
   
 <!-- </div>
