@@ -1,0 +1,22 @@
+<table style="max-width:800px;margin:auto;padding:20px;box-shadow: 0px 1px 4px #000;margin-top:40px;background-color:#f7f7f4;">
+  <tbody style="text-align:center;margin:auto;">
+    <tr>
+      <td><h2 style="color:#625F5F;font-family: 'Open Sans', sans-serif;">Hello <%= @user.first_name %></h2></td>
+    </tr>
+    <tr>
+      <td><h3 style="font-size:1.1em;color:#625F5F;font-family: 'Open Sans', sans-serif;">Thank you! Your purchase was successful</h3></td>
+    </tr>
+    <tr>
+      <td><p style="color:#625F5F;font-family: 'Open Sans', sans-serif;font-size:bold;"></h4>These are the details of your purchase:</td>
+    </tr>
+    <tr>
+      <td><p style="color:#625F5F;font-family: 'Open Sans', sans-serif;"></p>Name: <%= @product.name %></td>
+    </tr>
+    <tr>
+      <td><p style="color:#625F5F;font-family: 'Open Sans', sans-serif;"></p>Price: <%= @product.price %></td>
+    </tr>
+    <tr>
+      <td><p style="color:#625F5F;font-family: 'Open Sans', sans-serif;"></p>Date: <%= @product.created_at %></td>
+    </tr>
+  </tbody>
+</table>
