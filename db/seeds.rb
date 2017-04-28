@@ -17,7 +17,11 @@ end
 
 # Seed Users and Orders
 # Admin User: Set a password for this user in the rails console after reseeding
-User.create!(email: 'admin@example.com', password: 'password', admin: true)
+User.create!(
+	email: 'admin@example.com',
+	password: Faker::Internet.password(10, 20, true),
+	admin: true
+)
 
 10.times do
 	User.create!(
@@ -25,11 +29,12 @@ User.create!(email: 'admin@example.com', password: 'password', admin: true)
 		last_name: Faker::Name.last_name,
 		email: Faker::Internet.free_email(
 			"#{Faker::Name.first_name}.random_last_name"
-		)
+		),
+		password: Faker::Internet.password(10, 20, true)
 	)
 	# Create an order for the last user created
 	Order.create!(
-		product: Producsts.first,
-		user: Users.last,
+		product: Product.first,
+		user: User.last,
 	)
 end
