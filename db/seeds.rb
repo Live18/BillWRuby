@@ -5,4 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Product.create(:name => "seed-generated product", :description => "I also created this product without using the HTML form!")
+# Seed User
+User.create!(email: 'admin@example.com')
+# Seed Products
+# Note: :name => is the same as name:
+Product.create!(name: 'Product 1', description: 'This is a description for product 1.')
+
+# Do This 10 times!
+10.times do
+	# Faker data will go here
+end
