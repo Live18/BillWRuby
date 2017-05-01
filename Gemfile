@@ -46,7 +46,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  #Adding sqlite3 for 3.10
+  # Adding sqlite3 for 3.10
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails', '~>4.0'
@@ -59,6 +59,14 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'capybara' # Testing Framework that simulates user interactions in a web browser
+  gem 'capybara-screenshot' # Takes a picture of the browser when capybara has an error
+  # gem 'capybara-webkit' # A capybara driver to test the javasript on the web page
+  gem 'database_cleaner' # Ensures a clean state for testing
+  gem 'shoulda-matchers' # Adds extra matchers for tests
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
