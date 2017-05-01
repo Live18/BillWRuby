@@ -6,7 +6,7 @@
 # if you are enforcing unique emails)
 
 10.times do
-	Product.create(
+	Product.create!(
 		name: Faker::Commerce.product_name,
 		description: 'This is a description for the product.',
 		image_url: Faker::Avatar.image,
