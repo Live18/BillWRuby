@@ -1,63 +1,30 @@
 <!DOCTYPE html>
-<html>
+<meta charset='utf-8'>
+<html lang='en'>
   <head>
     <title>ARC Sports Tech</title>
+
+    <%= csrf_meta_tags %>
    
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <meta name="viewport" content="widith=device-width, initial-scale=1">
-    <%= csrf_meta_tags %>
   </head>
 
-  <!-- <%= image_tag("arcplaceholder.jpg", class: "img-responsive my-image") %> -->
+  <body>
 
-  <body data-spy"scroll" data-target=".navbar">
-  	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  		<ul class="nav pull-left">
-  			<li><%= link_to "Home", static_pages_index_path %></li>
-  			<li><%= link_to "About", static_pages_about_path %></li>
-  			<li><%= link_to "Contact", static_pages_contact_path %></li>
-        <li><%= link_to "Products", products_path %></li>
-        
-        
-		  </ul>
-      <ul class="nav pull-right">
-        <li>
-          <li><%= form_tag("/products", method: "get") do %>
-            <%= label_tag(:q, "Search for:") %>
-            <%= text_field_tag(:q) %>
-            <%= submit_tag("Search") %>
-            <% end %></li>
-          <li><% if user_signed_in? %>
-            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-          <% else %>
-            <%= link_to('Login', new_user_session_path) %>
-          <% end %>
-        </li>
-      </ul>
+    <%= render 'layouts/navbar' %>
 
+    <%= render 'layouts/notices' %>
 
-	  </nav>
-    <div class="notice">
-      <% if notice %>
-       <p id="notice" class="alert alert-info" button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span></button>
-       <strong><%= notice %></strong></p>
-     <% end %>
+    <div class='container'>
+      <%= yield %>
     </div>
-    <div class="alert">
-      <% if alert %>
-       <p id="alert" class="alert alert-info" button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"></span></button>
-       <strong><%= alert %></strong></p> <!-- these are buttons to close the alert -->
-     <% end %>
-
-    <%= yield %>
     
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </body>
+  
   <footer class="footer">
       &copy; 2017 Arc Sports Tech
   </footer>

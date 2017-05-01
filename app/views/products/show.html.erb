@@ -1,94 +1,48 @@
-<!-- <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-
-<p>
-	<strong>Colour:</strong>
-	<%= @product.colour %>
-</p>
-
-<p>
-	<strong>Price:</strong>
-	<%= @product.price %>
-</p>
-<%= @product.highest_rating_comment %>
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %> -->
-
-
-<p id="notice"><%= notice %></p>
-
 <div class="container">
+  <p id="notice"><%= notice %></p>
   <div class="row">
-    
-      <!-- <div class="product-image col-sm-2 col-md-4 col-lg-6"> -->
-        <% if @product.image_url %>
-              <%= image_tag(@product.image_url, class: "img-responsive") %>
-          <% end %>
-      <!-- </div>
-    </div> -->
-    
-      <p class="product-name">
-        <%= @product.name %>
-      </p>
+    <div class='col-md-12'>
+    <% if @product.image_url %>
+      <%= image_tag(@product.image_url, class: "img-responsive") %>
+    <% end %>
 
-      <p class="product-description">
-        <%= @product.description %>
-      </p>
-      <p class="product-price">
-        <%= @product.price %>
-      </p>
-    <!-- </div> -->
+    <p class="product-name">
+      <%= @product.name %>
+    </p>
 
+    <p class="product-description">
+      <%= @product.description %>
+    </p>
+    <p class="product-price">
+      <%= @product.price %>
+    </p>
    
     <%= form_tag "/payments/create" do %>
       <%= hidden_field_tag(:product_id, @product.id) %>
       <%= render partial: 'shared/stripe_checkout_button' %>
     <% end %>
 
-   <!--  </div> -->
-</div>
-
-<p></p>
-    
-
-<div class="col-sm-12 col-md-4">
-  <h4>Highest Rating Comment</h4>
+    <h4>Highest Rating Comment</h4>
     <% if @product.highest_rating_comment %>
       <%= @product.highest_rating_comment.body %>
     <% end %>
 
     <h4>Lowest Rating Comment</h4>
-      <% if @product.lowest_rating_comment %>
+    <% if @product.lowest_rating_comment %>
         <%= @product.lowest_rating_comment.body %>
       <% end %>
-      <p>Average Rating: <div class="rated" data-score="<%= @product.average_rating %>"></div></p>
-    
-  
-<!-- </div>
-<div class="col-sm-2 col-md-4"> -->
-  <%= render 'new_comment', comments: @product.comments %>
-  <%= render partial: "comments" %>
-  <%= will_paginate @comments %>
 
-  <p></p>
-  <p></p>
+      <p>
+        Average Rating:
+        <div class="rated" data-score="<%= @product.average_rating %>">  
+        </div>
+      </p>
 
-
-    <%= link_to 'Edit', edit_product_path(@product), class:'btn btn-primary' %> |
-    <%= link_to 'Back', products_path, class:'btn btn-primary' %>
-  </div>  
+      <%= render 'new_comment', comments: @product.comments %>
+      <%= render partial: "comments" %>
+      <%= will_paginate @comments %>
+      <%= link_to 'Edit', edit_product_path(@product), class:'btn btn-primary' %> |
+      <%= link_to 'Back', products_path, class:'btn btn-primary' %>
+    </div>
+  </div>
 </div>
