@@ -61,6 +61,14 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do
+  gem 'capybara' # Testing Framework that simulates user interactions in a web browser
+  gem 'capybara-screenshot' # Takes a picture of the browser when capybara has an error
+  # gem 'capybara-webkit' # A capybara driver to test the javasript on the web page
+  gem 'database_cleaner' # Ensures a clean state for testing
+  gem 'shoulda-matchers' # Adds extra matchers for tests
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
