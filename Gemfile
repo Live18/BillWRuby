@@ -40,7 +40,7 @@ gem 'stripe'
 gem 'cancancan', '~> 1.10'
 group :production do
   #Adding Gen for 3.10 exersize
-gem 'pg'
+  gem 'pg'
 end
 
 group :development, :test do

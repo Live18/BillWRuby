@@ -1,0 +1,32 @@
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class='container-fluid'>
+      <div class='navbar-header'>
+      <ul class="nav pull-left">
+        <li><%= link_to "Home", static_pages_index_path %></li>
+        <li><%= link_to "About", static_pages_about_path %></li>
+        <li><%= link_to "Contact", static_pages_contact_path %></li>
+        <li><%= link_to "Products", products_path %></li>
+        
+        
+      </ul>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <li><%= form_tag("/products", method: "get") do %>
+            <%= label_tag(:q, "Search for:") %>
+            <%= text_field_tag(:q) %>
+            <%= submit_tag("Search") %>
+            <% end %></li>
+          <li><% if user_signed_in? %>
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+          <% else %>
+            <%= link_to('Login', new_user_session_path) %>
+          <% end %>
+        </li>
+      </ul>
+      </div>
+      </div>
+
+    </nav>
+
