@@ -7,6 +7,7 @@ class PaymentsController < ApplicationController
     token = params[:stripeToken]
       #Creates the charge on Stripe's servers
       begin
+        byebug
         charge = Stripe::Charge.create(
           :amount => (@product.price*100), 
           :currency => 'usd',

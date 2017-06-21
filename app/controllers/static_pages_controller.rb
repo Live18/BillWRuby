@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   end
 
   def landing_page
+    byebug
   	@products = Product.limit(4)  
   end
 
