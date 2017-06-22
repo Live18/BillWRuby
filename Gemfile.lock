@@ -46,6 +46,7 @@ GEM
     bcrypt (3.1.11)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
+    brakeman (3.6.2)
     builder (3.2.3)
     byebug (9.0.6)
     cancancan (1.16.0)
@@ -229,6 +230,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass (~> 3.2.0)
+  brakeman
   byebug
   cancancan (~> 1.10)
   capybara
@@ -259,4 +261,4 @@ DEPENDENCIES
   will_paginate (~> 3.1.1)
 
 BUNDLED WITH
-   1.14.6
+   1.15.1
