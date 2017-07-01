@@ -10,8 +10,9 @@ $(document).on('turbolinks:load', function(){
     $('.img-zoom').elevateZoom({
         zoomType: "lens", 
         lensShape: "round", 
-        lensSize: 100, 
-        lensFadeIn: 400, 
-        lensFadeOut: 500
+        responsive: true,
+	    zoomWindowFadeIn: 500,
+	    zoomWindowFadeOut: 750,
+	    scrollZoom : true
     });
 });
