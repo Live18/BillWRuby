@@ -2,10 +2,13 @@
     <% if product.image_url %>
         <%= image_tag(product.image_url, class: "img-responsive detail img-zoom") %>
     <% end %>
-
-    <h2><%= link_to product.name, product %></h2>
-    <p><%= product.description %></p>
-    <p><%= product.colour %></p>
-    <strong>$<%= number_to_currency(product.price) %>/month</strong>
-    <%= link_to "Delete", product_path(product), :method => "DELETE", :confirm => "Are you sure you want to delete?" %>
+    <% cache product do %>
+    	<tr>
+		    <td><h2><%= link_to product.name, product %></h2></td>
+		    <td><%= product.description %></td>
+		    <td><%= product.colour %></td>
+		    <td><strong><%= number_to_currency(product.price) %>/month</strong></td>
+		    <td><%= link_to "Delete", product_path(product), :method => "DELETE", :confirm => "Are you sure you want to delete?" %></td>
+	    </tr>
+    <% end %>
 </div>

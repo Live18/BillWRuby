@@ -5,10 +5,11 @@
     <% if @product.image_url %>
       <%= image_tag(@product.image_url, class: "img-responsive detail img-zoom", data_zoom_image: "@product.image_url") %>
     <% end %>
-
-    <p class="product-name">
+    <% cache @product do %>
+    <h2 class="product-name">
       <%= @product.name %>
-    </p>
+    </h2>
+    
 
     <p class="product-description">
       <%= @product.description %>
@@ -16,6 +17,7 @@
     <p class="product-price">
       <%= @product.price %>
     </p>
+    <% end %>
    
     <%= form_tag "/payments/create" do %>
       <%= hidden_field_tag(:product_id, @product.id) %>

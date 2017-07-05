@@ -26,6 +26,16 @@ Rails.application.configure do
   config.assets.compile = true
   config.assets.digest = true
 
+  config.cache_store = :dalli_store,
+                    (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+                    {:username => ENV["MEMCACHIER_USERNAME"],
+                     :password => ENV["MEMCACHIER_PASSWORD"],
+                     :failover => true,
+                     :socket_timeout => 1.5,
+                     :socket_failure_delay => 0.2,
+                     :down_retry_delay => 60
+                    }
+
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
