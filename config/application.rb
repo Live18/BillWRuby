@@ -12,4 +12,5 @@ module SampleApp
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
   end
+  config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
 end
