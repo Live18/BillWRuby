@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-gem 'newrelic_rpm'
+
 gem 'redis-rails'
 gem 'dalli'
 gem 'rails-controller-testing'
@@ -53,6 +53,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails', '~>4.0'
+  gem 'newrelic_rpm'
 end
 
 group :development do
