@@ -5,7 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
+
 
 module SampleApp
   class Application < Rails::Application

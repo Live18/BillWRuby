@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :products do
     resources :comments
   end
+  mount ActionCable.server => '/cable'
   
   devise_for :users, controllers: {
     sessions: 'users/sessions'
@@ -21,4 +22,5 @@ Rails.application.routes.draw do
   post 'payments/create'
 
   root 'static_pages#landing_page'
+
 end

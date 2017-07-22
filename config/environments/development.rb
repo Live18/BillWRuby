@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.app_generators.javascript_engine = :javascript
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -21,9 +22,9 @@ Rails.application.configure do
       'Cache-Control' => 'public, max-age=172800'
     }
   else
-    config.action_controller.perform_caching = false
+    config.action_controller.perform_caching = false 
 
-    config.cache_store = :null_store
+    
   end
 
   # Don't care if the mailer can't send.
