@@ -37,9 +37,9 @@
         <div class="rated" data-score="<%= @product.average_rating %>">  
         </div>
       </p>
-
       <%= render 'new_comment', comments: @product.comments %>
       <%= render partial: "comments" %>
+      <div class="alert alert-info" style="display:none" role="alert">A new comment was posted!</div>
       <%= will_paginate @comments %>
       <%= link_to 'Edit', edit_product_path(@product), class:'btn btn-primary' %> |
       <%= link_to 'Back', products_path, class:'btn btn-primary' %>
