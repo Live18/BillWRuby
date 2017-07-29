@@ -71,6 +71,8 @@ group :test do
   # gem 'capybara-webkit' # A capybara driver to test the javasript on the web page
   gem 'database_cleaner' # Ensures a clean state for testing
   gem 'shoulda-matchers' # Adds extra matchers for tests
+  gem 'guard-rspec'
+  gem 'launchy'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

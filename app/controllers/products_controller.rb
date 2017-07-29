@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, except: [:index, :show] # This line only allows admin to change product listings. Otherwise, anyone on the site can do it.
+  before_action :authenticate_user!, except: [:index, :show] # This line only allows admin to change product listings. Otherwise, anyone on the site can do it.
   # GET /products
   # GET /products.json
   def index

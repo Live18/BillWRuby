@@ -16,9 +16,9 @@ App.product = App.cable.subscriptions.create("ProductChannel", {
   },
   listen_to_comments: function() {
     return this.perform('listen', {
-      product_id: $("[data-product-id").data("product-id")
+      product_id: $("[data-product-id]").data("product-id")
     });
-  }
+  },
 });
 
 $(document).on('turbolinks:load', function() {
