@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @user = current_user
     respond_to do |format|
       if @comment.save
-        ProductChannel.broadcast_to @product.id, comment: @comment, average_rating: @product.average_rating
+        # ProductChannel.broadcast_to @product.id, comment: @comment, average_rating: @product.average_rating
         format.html { redirect_to @product, notice: 'Review was created successfully.' }
         format.json { render :show, status: :created, location: @product }
         format.js
@@ -25,10 +25,10 @@ class CommentsController < ApplicationController
     redirect_to product
   end
 
-private
-  def comment_params
-    params.require(:comment).permit(:user_id, :body, :rating)
-  end
+  private
+    def comment_params
+      params.require(:comment).permit(:user_id, :body, :rating)
+    end
     
 
 end
