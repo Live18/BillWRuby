@@ -8,12 +8,9 @@ FactoryGirl.define do
     admin false
   end
 
-  factory :admin, class: User do
-    email
-    password 'noah04'
+  factory :admin, parent: :user do
+    id
     admin true
-    first_name 'Bill'
-    last_name 'Wagner'
   end
   
 end
