@@ -8,7 +8,16 @@
 		    <td><%= product.description %></td>
 		    <td><%= product.colour %></td>
 		    <td><strong><%= number_to_currency(product.price) %>/month</strong></td>
-		    <td><%= link_to "Delete", product_path(product), :method => "DELETE", :confirm => "Are you sure you want to delete?" %></td>
+		   <!-- <td><%= link_to "Delete", product_path(product), :method => "DELETE", :confirm => "Are you sure you want to delete?" %></td> -->
 	    </tr>
     <% end %>
+
+    <ul class="inline_list">
+    	<% if user_signed_in? && current_user.admin? %>
+	    	<li><%= link_to 'Show', product %>|</li>
+		    <li><%= link_to 'Edit', edit_product_path(product) %>|</li>
+		    <li> <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></li> 
+	    <% end %>
+		    
+	</ul>
 </div>

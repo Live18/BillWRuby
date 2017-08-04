@@ -4,15 +4,6 @@
 
 <div>
 
-<% @products.each do |product| %>
-  <li>
-  	<%= link_to product_path(product.id) %>
-  	<%= image_tag(product.image_url, @product.id) %>
-  	<%= link_to 'Edit', edit_product_path(@product.id) %>
-  </li>
-  <% end %>
-
-
   <!-- <div class="container-fluid"> -->
         <!-- <div class="row"> -->
    	<% cache(cache_key_for_products) do %>
@@ -20,15 +11,6 @@
     <% end %>
         <!-- </div>     
   </div> -->
-  
-
-<div id="new-product-button">
-        <% if signed_in? && current_user.admin? %>
-	        <%= link_to 'New Product', new_product_path, class:"btn btn-default btn-special" %>
-	        
-	        <%= link_to 'Back', root_path, class:'btn btn-default btn-special' %>
-        <% end%>
-  </div>
 
 </div>
 
