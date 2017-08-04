@@ -1,9 +1,10 @@
-<h1>Learn More About ARC Sports Tech</h1>
-<h2>Fill out the form below and be part of the beta test</h2>
+<h1 style="text-align:center;">Learn More About ARC Sports Tech</h1>
+<h2 style="text-align:center;">Fill out the form below and be part of the beta test</h2>
 
-<h1>Contact Us</h1>
+<h1 style="text-align:center;">Contact Us</h1>
 <%= flash[:notice] %>
 <%= form_tag('/static_pages/thank_you') do %>
+<div class="contact-form">
     <div class="row">
       
       <div class="col-md-4">
@@ -22,6 +23,7 @@
       </div>
     </div>
       <%= submit_tag "Send" %>
-    </div>
+      <p></p>
+  </div>
 <% end %>
 <p>Find me in app/views/static_pages/contact.html.erb</p>

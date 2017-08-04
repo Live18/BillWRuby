@@ -1,2 +1,41 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  background-color: #CEDDF4;
+  padding:0px 0px 40px;
+  margin: 0;
+}
+.footer {
+    text-align: right;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    }
+
+.form-group {
+    display: block;
+    float: middle;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+ }
+
+ .contact-form :focus {
+ background-color: lightyellow;
+ border: 3px solid #555;
+ }
+
+ .bill-image {
+ margin: auto;
+ }
+
+ #carousel-example-generic {
+ padding-bottom: 20px;
+ }
