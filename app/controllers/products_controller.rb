@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+
+    @product = Product.first
     # @price_limit = params[:price_limit].to_i
     # @products = Product.where(:price => 0..@price_limit)
     #@products = Product.search(params[:search])
