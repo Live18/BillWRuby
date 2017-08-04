@@ -24,7 +24,7 @@
         </ul>
         <ul class='nav navbar-nav navbar-right'>  
           <li>
-            <%= form_tag products_path, :method => "get" do %>
+            <%= form_tag products_path, :method => "GET" do %>
               <%= label_tag(:q) %>
               <%= text_field_tag(:q) %>
               <%= submit_tag("Search", class: 'btn btn-default') %>
