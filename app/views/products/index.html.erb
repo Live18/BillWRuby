@@ -12,8 +12,8 @@
   </div> -->
   <div id="new-product-button">
   	<% if signed_in? && current_user.admin? %>
-	  <%= link_to 'New Product', new_product_path , class:"btn btn-default btn-special" %>
-	  <%= link_to 'Edit', edit_product_path(@product), class:'btn btn-default btn-special' %>
+	  <%= link_to 'New Product', new_product_path, class:"btn btn-default btn-special" %>
+	  <%= link_to 'Edit', edit_product_path(@product.id), class:'btn btn-default btn-special' %>
 	  <%= link_to 'Back', root_path, class:'btn btn-default btn-special' %>
   	<% end%>
 	</div>
